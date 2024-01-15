@@ -16,6 +16,8 @@ Without using a specific argument, **cd** will not know which directory to chang
 
 As such, no change in which file directory we are in happens.
 
-The **ls** command only lists out the name of the directory, lecture1
+The **ls** command only lists out the name of the current directory, lecture1
+
+
 
 
