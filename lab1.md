@@ -14,7 +14,7 @@ As such, no change in which file directory we are in happens.
 
 The `ls` command only lists out the name of the current directory, the home directory. 
 Since We didn't provide arguments to the `cd` command, what is being printed is the contents of the home directory,
-which is the lecture1 directory within.
+which is the `lecture1` directory within.
 
 The `cat` command prints out the contents of files provided as arguments. Since we are not providing
 any file to be used as an argument, nothing will be concatenated in the terminal. 
