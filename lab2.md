@@ -104,6 +104,10 @@ In this implementation:
          * `/add-message?s=Let's go jellyfishing&user=Spongebob`
     * I refreshed the second `/add-message` request page, which added the same message twice
 
+ In both of my screenshots, the handleRequest method will identify the `user` and `message` passed in through typing in the URL, and will determine if the format of the HTTP request is valid or not. If it is not, a series of error messages will be returned depending on whatever mistake was made:
+
+
+
 
 
 
