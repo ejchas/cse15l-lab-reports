@@ -66,7 +66,18 @@ class ChatServer {
 
 **Screenshots of my output:**
 
-![Image](Lab Report 2 SC 1.png)
+<img width="521" alt="Lab Report 2 SC 1" src="https://github.com/ejchas/cse15l-lab-reports/assets/156235662/94ca27d8-9f99-4b6c-aa18-5fac28128112">
+
+In this image:
+* The `main` and `handleRequest` methods are called
+* In the `main` method:
+    * The relevant argument is the `args` parameter of type `String[]`. I am expected to pass in an appropriate port number as a command-line argument
+    * The relevant field is `port` whose value is dependent on the command-line argument when I run the program
+         * The value of `port` is changed when a value is extracted from the `args` array and parsed into an `Integer`, then assigned to `port`
+* In the `handleRequest` method:
+    * 
+
+
 
 
 
