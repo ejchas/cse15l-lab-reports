@@ -75,9 +75,35 @@ In this implementation:
     * The relevant field is `port` whose value is dependent on the command-line argument when I run the program
          * The value of `port` is changed when a value is extracted from the `args` array and parsed into an `Integer`, then assigned to `port`
 * In the `handleRequest` method:
-    * The revelent argument is the `url` objects of type `URI`, which passes in the URL of the HTTP request.
+    * The relevant argument is the `url` objects of type `URI`, which passes in the URL of the HTTP request
     * The relevant field is `chatMessages` of type `ArrayList<String>`
-         * The value of `chatMessages` updates as new chat messages are added with each `/add-message` request. The message combines the `user` and `s` parameters from the URL, and the formatted message is then added to the `chatMessages` list.
+         * The value of `chatMessages` updates as new chat messages are added with each `/add-message` request. The message combines the `user` and `s` parameters from the URL, and the formatted message is then added to the `chatMessages` list
+    * From this screenshot, here are the *incoming requests*
+         * `/add-message?s=Hey Patrick&user=Spongebob`
+         * `/add-message?s=Hey Spongebob&user=Patrick`
+      
+
+
+<img width="482" alt="Lab Report 2 SC 2" src="https://github.com/ejchas/cse15l-lab-reports/assets/156235662/c8627035-9a2b-44a3-bae6-a472d734089c">
+
+In this implementation:
+* The `main` and `handleRequest` methods are called
+* In the `main` method, as previously:
+    * The relevant argument is the `args` parameter of type `String[]`. I am expected to pass in an appropriate port number as a command-line argument
+    * The relevant field is `port` whose value is dependent on the command-line argument when I run the program
+         * The value of `port` is changed when a value is extracted from the `args` array and parsed into an `Integer`, then assigned to `port`
+* The `main` method again only handles the usage of a correct port, and since I didn't change the port, it won't be directly involved in handling the incoming HTTP requests
+* In the `handleRequest` method, as previously:
+    * The relevant argument is the `url` objects of type `URI`, which passes in the URL of the HTTP request
+    * The relevant field is `chatMessages` of type `ArrayList<String>`
+         * The value of `chatMessages` updates as new chat messages are added with each `/add-message` request. The message combines the `user` and `s` parameters from the URL, and the formatted message is then added to the `chatMessages` list
+    * From this screenshot, here are the *incoming requests*
+         * `/add-message?s=Hey Patrick&user=Spongebob`
+         * `/add-message?s=Hey Spongebob&user=Patrick`
+         * `/add-message?s=Hey Spongebob&user=Patrick`
+         * `/add-message?s=Let's go jellyfishing&user=Spongebob`
+    * I refreshed the second `/add-message` request page, which added the same message twice
+
 
 
 
