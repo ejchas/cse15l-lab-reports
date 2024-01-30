@@ -106,10 +106,10 @@ In this implementation:
 
  In both of my screenshots, the handleRequest method will identify the `user` and `message` passed in through typing in the URL, and will determine if the format of the HTTP request is valid or not. If it is not, a series of error messages will be returned depending on whatever mistake was made:
 
+<img width="538" alt="Lab Report 2 SC 3" src="https://github.com/ejchas/cse15l-lab-reports/assets/156235662/b888fa63-74ac-471f-b119-829c85a9af41">
 
+Here for example, I didn't specify any query parameters. 
 
-
-
-
+##  Part 2
 
 
