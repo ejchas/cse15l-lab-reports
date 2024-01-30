@@ -64,7 +64,8 @@ class ChatServer {
 }
 ```
 
-Screenshots of my output:
+**Screenshots of my output:**
+
 ![Image](Lab Report 2 SC 1.png)
 
 
