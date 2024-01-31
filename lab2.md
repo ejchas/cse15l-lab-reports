@@ -110,6 +110,17 @@ In this implementation:
 
 Here for example, I didn't specify any query parameters. 
 
-##  Part 2
+### Part 2
 
+Screenshot showcasing absolute file paths for public and private SSH keys:
+
+<img width="422" alt="Lab Report 2 SC 4" src="https://github.com/ejchas/cse15l-lab-reports/assets/156235662/f4961f3f-5c59-48c6-a19f-639afb7b33b8">
+
+Screenshot showcasing terminal interaction logging into ieng6 *without* using a password:
+
+<img width="689" alt="Lab Report 2 SC 5" src="https://github.com/ejchas/cse15l-lab-reports/assets/156235662/e63ca4f9-9350-4963-8073-de1b6d96f677">
+
+### Part 3
+
+There were many things that I learned about in the labs of Week 2 and Week 3 that I hadn't known about previously. For one, this was my initial experience using the `ssh` command to connect to a remote server. The entire concept was foreign to me, and I had much difficulty trying to understand the significance of what I was doing. I also learned about the `mkdir` and `scp` commands, which create directories and copy files between the host server and remote server, respectively. These are the fundamentals to understanding how to manage files and securely communicate between machines. Overall, these labs proved to be very challenging for me to get through, but I hope to gather more knowledge as the quarter progresses.
 
