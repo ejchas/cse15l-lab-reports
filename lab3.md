@@ -165,3 +165,38 @@ What my changes accomplish are:
 
 The `grep` command is commonly used to to find a specific pattern of characters, and returning all the the lines that contain the character. 
 An example of this is using the `grep` command to filter out a specific file extension like `.txt` or `.jpg` in a directory, and finding all files in that directory with that extension.
+
+There are also many different command-line options that can be paired with the `grep` command to perform a plethora of tasks. Here is a list of examples of four options being used in the `technical/` directory from the Week 5 lab:
+
+#### Option `-c`:
+The `-c` option is used to print out the count of lines that match a pattern. If I were to `grep` with with the text `the` as my input, `technical/` as the directory to search in, and working in the `docsearch/` directory, I would simply get a very long list of every single `.txt` file in the directory. However, next to this long list of files would be the number of times the pattern of words appears in each individual `.txt` file. There are many, many files, so here are just some of those found in the output:
+
+```
+accen@Ethans-Laptop MINGW64 ~/OneDrive/Documents/GitHub/cse15l-lab-reports/docsearch (main)
+$ grep -r -c "the" technical/
+
+accen@Ethans-Laptop MINGW64 ~/OneDrive/Documents/GitHub/cse15l-lab-reports/docsearch (main)
+$ technical/plos/pmed.0020249.txt:266
+technical/plos/pmed.0020257.txt:22
+technical/plos/pmed.0020258.txt:22
+technical/plos/pmed.0020268.txt:33
+technical/plos/pmed.0020272.txt:40
+technical/plos/pmed.0020273.txt:25
+technical/plos/pmed.0020274.txt:24
+technical/plos/pmed.0020275.txt:29
+technical/plos/pmed.0020278.txt:13
+technical/plos/pmed.0020281.txt:20
+```
+I am now being shown how many times the word `the` appears in these `.txt` files. In `technical/plos/pmed.0020257.txt`, the word appears 22 times. This type of command option can determine how often a keyword appears in a list of files. It can aid in finding a general idea of the contents of the files, and what they're talking about.
+
+Additionally, I can use `-c` 
+
+#### Option `-h`:
+
+#### Option `-i`:
+
+#### Option `-v`:
+
+### Citations:
+
+For the second section of the lab report, I used Google first to find the different options I could use with the `grep` command, which led me to the url `https://www.geeksforgeeks.org/grep-command-in-unixlinux/`. I looked at the list of different command options, took note of how they worked per their descriptions, and picked which ones I thought would best demonstrate nuances in how to use the `grep` command in my limited understanding of how it works. I also referred back to the instructions from the Week 5 lab to ensure that the syntax I used for the `grep` command was correct. 
