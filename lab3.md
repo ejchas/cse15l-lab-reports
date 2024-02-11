@@ -21,7 +21,7 @@ From the lab in Week 4, I noticed that the array list implementation in `ArrayEx
   }
 ```
 
-When the program is run, these methods result in a test failure, making the failure-inducing inputs the `assertArrayEquals()` statements found in each tester method. Since this implementation is buggy, I identified an input that did work in its current state by only passing in an array that had a `{ 0 }` array for `testReversed()`, and either one-element arrays or symmetric elements for `testReverseInPlace()`. What I mean by the latter is that an array can have the elements in an order such as this: `{1, 2, 2, 1}` and this would not induce a tester method failure, since in its current state, the tester method doesn't check for edge cases. Here's what happens when I run both the failure-inducing input and non-failure-inducing input tester methods:
+When the program is run, these methods result in a test failure for specific inputs, making the failure-inducing inputs the `assertArrayEquals()` statements found in each tester method. Since this implementation is buggy, I could stil identify an input that did allow the tester methods to pass in their current state by only passing in an array that had elements `{ 0 }` for `testReversed()`, and either one-element arrays or symmetric elements for `testReverseInPlace()`. What I mean by the latter is that an array can have the elements in an order such as this: `{1, 2, 2, 1}` and this would not induce a tester method failure, since in its current state, the tester method doesn't check for edge cases. Here's what happens when I run both the failure-inducing input and non-failure-inducing input tester methods:
 
 #### Failure-Inducing: 
 
@@ -54,6 +54,10 @@ When the program is run, these methods result in a test failure, making the fail
   }
 
 ```
+
+##### Symptom:
+
+
 #### Non-Failure-Inducing:
 
 ```
@@ -77,6 +81,10 @@ public class ArrayTests {
   }
 }
 ```
+
+##### Symptom:
+
+
 
 ### Part 2: Exploring the `grep` Command
 
