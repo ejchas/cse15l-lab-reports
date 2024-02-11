@@ -58,6 +58,7 @@ When the program is run, these methods result in a test failure for specific inp
 ##### Symptom:
 
 
+
 #### Non-Failure-Inducing:
 
 ```
@@ -84,7 +85,7 @@ public class ArrayTests {
 
 ##### Symptom:
 
-
+<img width="628" alt="Lab Report 3 SC 1" src="https://github.com/ejchas/cse15l-lab-reports/assets/156235662/1b6fd2fa-a20f-4cfe-bec2-039556f628cc">
 
 ### Part 2: Exploring the `grep` Command
 
