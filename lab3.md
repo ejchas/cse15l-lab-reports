@@ -194,6 +194,7 @@ Another use I found for the `-c` command from reasearching was that by pairing i
 ```
 $ grep -r -ci "the" technical/
 
+accen@Ethans-Laptop MINGW64 ~/OneDrive/Documents/GitHub/cse15l-lab-reports/docsearch (main)
 technical/plos/pmed.0020257.txt:27
 technical/plos/pmed.0020258.txt:23
 technical/plos/pmed.0020268.txt:35
