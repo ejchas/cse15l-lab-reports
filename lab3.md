@@ -209,13 +209,85 @@ technical/plos/pmed.0020281.txt:21
 This refined search can help with finding a greater frequency of keywords which can make reporting specific keywords in quantity more accurate. 
 
 #### Option `-h`:
+The `-h` option gives an output of matching lines for an inputted keyword, but does not display the file name specifically. Using `grep` with the `-r` option to search recurisvely in the directory `technical/` allows you to find every single instance of the keyword without including the file name. (Again these `.txt` files can be very long so here's a shortened version of the text that was displayed from the file `technical/biomed/1471-2156-2-1.txt`):
 
+```
+grep -r -h "the" technical/biomed/1471-2156-2-1.txt
 
+        the death of retinal ganglion cells (RGCs) and their axons,
+        and is characterized by atrophic excavation of the optic
+        that other factors, such as genetic susceptibility to
+        without high IOP and the benefit of lowering IOP in some of      
+        these individuals further suggest multiple factors
+        pressure-induced damage [ 6]. 
+```
 
-#### Option `-i`:
+The keyword I inputted was `the`, and obviously many, many lines appeared as a result. What I found interesting about this usage of `-h` was that I could almost summarize the entire `.txt` file by just reading through the returned lines. Almost all of the text is cohesive, and will grant the user a general understanding of the context of the text. 
+
+I found another interesting usage of `-h` by pairing it up with the syntax `technical/{government, biomed}/`. Like the previous instance, no file name will be displayed, but I did get quite a few lines of text when I inputted the keyword `territory`:
+
+```
+grep -r -h "territory" technical/{government,biomed}/
+territory and who return to work in the United States regularly. 8
+and territory to work with one another and with a broad spectrum of
+territory of most relevance to clients and their
+part of the legal landscape in every U.S. state and territory.
+resources available in every state and territory. Objectives
+territory. Staff are also able to assume special initiatives and
+in the affected state or territory. In making the decision, the
+create world-class justice communities in each state and territory
+Dakota. These five states and one territory received notices of
+communities for executive directors of state and territory-wide
+California, requires each of his territory managers to present an
+territory managers solicit feedback from customers on their
+territory - a huge area bounded by the Ventura, Kern, San
+territory.
+new territory.
+```
+
+(I again shortened the actual output since there are many lines). What this command will do is find instances of the keyword `territory` in *both* the `government/` and `biomed/` subdirectories. This can be used in order to make lines much more readable when analyzing the contents of the two subdirectories. 
+
+#### Option `-e`:
+
+The `-e` option allows for searching of patterns within specific directories or files, and there can be multiple patterns you can search for on the same command line. When I use the keywords `climate` and `justice` in the `biomed/` subdirectory, paired with `-r` to search recursively, I get the following output:
+
+```
+$ grep -r -e "climate" -e "justice" technical/biomed/
+technical/biomed/1471-2148-2-12.txt:          were then acclimated to the test environment via a
+technical/biomed/1471-2148-2-17.txt:        column, it is used as an indicator of steppe climates [ 14
+technical/biomed/1471-2156-3-10.txt:        climate, soil properties and silvicultural measures [ 21 ]
+technical/biomed/1471-2202-3-11.txt:          maintained in a climate-controlled room on a 12 h
+technical/biomed/1471-2229-2-8.txt:        acclimated under our laboratory conditions. We also
+technical/biomed/1471-244X-3-5.txt:        this sunny climate to only be exposed to illumination
+technical/biomed/1471-244X-3-5.txt:        The climate, especially during this time, is predominantly
+technical/biomed/1471-244X-3-5.txt:        such as in communities of more extreme climate, new factors
+technical/biomed/1471-2458-2-3.txt:            vibration, microclimate, electromagnetic fields, levels
+technical/biomed/1472-6785-1-5.txt:        of current developments in ecology and climate research [ 3
+technical/biomed/1472-6785-1-5.txt:        large-scale climate on the dynamics at all trophic levels
+technical/biomed/1472-6785-1-5.txt:        climate on the dynamics at and among individual trophic
+```
+
+Here, in this shortened version of the output, I see very instance of the word climate, and justice, which just happens to be zero, within the subdirectory `biomed/`. Here, I can find the exact position of where the keywords lie.
+
+Even though I can use the keyword `climate` with the option `-e` to find every instance of it in the desired directory or file, I notice that it appears to be shown even when it is a substring of something else, such as the word "acclimated". To ensure that only instances of just the word "climate" appear in the output, I can use the `-w` option with the `-e` option to ensure that only the exact pattern of `climate` will appear in the output. I'll also find another keyword that will likely appear more often, `science`:
+
+```
+$ grep -r -we "climate" -we "science" technical/biomed/
+technical/biomed/1471-2105-1-1.txt:        methods of systems science need to be used to analyze,
+technical/biomed/1471-213X-1-6.txt:        contribution to the body of science, and partly is a common
+technical/biomed/1471-2148-2-15.txt:        philosophy, sociology, economics and political science
+technical/biomed/1471-2156-3-10.txt:        climate, soil properties and silvicultural measures [ 21 ]
+technical/biomed/1471-2164-4-26.txt:          http://www.blackwell-science.com/products/journals/suppmat/PBI/PBI006/PBI006sm.htm.
+technical/biomed/1471-2202-3-11.txt:          maintained in a climate-controlled room on a 12 h
+technical/biomed/1471-2229-2-9.txt:        formalisms used in engineering and computer science [ 24 ]
+```
+
+Now, I get a list of every single file that will **only** showcase instances of the exact string "climate" and "science". It can be useful in trying to figure out exact quantities of patterns appearing, without needing to worry about the case of substrings.
 
 #### Option `-v`:
 
+Finally, the `-v` option
+
 ### Citations:
 
-For the second section of the lab report, I used Google first to find the different options I could use with the `grep` command, which led me to the url `https://www.geeksforgeeks.org/grep-command-in-unixlinux/`. I looked at the list of different command options, took note of how they worked per their descriptions, and picked which ones I thought would best demonstrate nuances in how to use the `grep` command in my limited understanding of how it works. I also referred back to the instructions from the Week 5 lab to ensure that the syntax I used for the `grep` command was correct. Other important links that helped me find relevant information were `https://docs.rackspace.com/docs/use-the-linux-grep-command`, 
+For the second section of the lab report, I used Google first to find the different options I could use with the `grep` command, which led me to the url `https://www.geeksforgeeks.org/grep-command-in-unixlinux/`. I looked at the list of different command options, took note of how they worked per their descriptions, and picked which ones I thought would best demonstrate nuances in how to use the `grep` command in my limited understanding of how it works. I also referred back to the instructions from the Week 5 lab to ensure that the syntax I used for the `grep` command was correct. Other important links that helped me find relevant information were `https://docs.rackspace.com/docs/use-the-linux-grep-command`, `https://docs.rackspace.com/docs/use-the-linux-grep-command`, `https://unix.stackexchange.com/questions/126514/how-can-i-use-grep-to-search-multiple-unnested-directories`
