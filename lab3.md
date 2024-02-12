@@ -189,9 +189,27 @@ technical/plos/pmed.0020281.txt:20
 ```
 I am now being shown how many times the word `the` appears in these `.txt` files. In `technical/plos/pmed.0020257.txt`, the word appears 22 times. This type of command option can determine how often a keyword appears in a list of files. It can aid in finding a general idea of the contents of the files, and what they're talking about.
 
-Additionally, I can use `-c` 
+Another use I found for the `-c` command from reasearching was that by pairing it with the `i` option, I can refine the search to be *insensitive* to letter cases. That way, more of the inputted keywords, regardless of capitalization, will appear in results:
+
+```
+$ grep -r -ci "the" technical/
+
+technical/plos/pmed.0020257.txt:27
+technical/plos/pmed.0020258.txt:23
+technical/plos/pmed.0020268.txt:35
+technical/plos/pmed.0020272.txt:41
+technical/plos/pmed.0020273.txt:26
+technical/plos/pmed.0020274.txt:26
+technical/plos/pmed.0020275.txt:31
+technical/plos/pmed.0020278.txt:15
+technical/plos/pmed.0020281.txt:21
+```
+
+This refined search can help with finding a greater frequency of keywords which can make reporting specific keywords in quantity more accurate. 
 
 #### Option `-h`:
+
+
 
 #### Option `-i`:
 
@@ -199,4 +217,4 @@ Additionally, I can use `-c`
 
 ### Citations:
 
-For the second section of the lab report, I used Google first to find the different options I could use with the `grep` command, which led me to the url `https://www.geeksforgeeks.org/grep-command-in-unixlinux/`. I looked at the list of different command options, took note of how they worked per their descriptions, and picked which ones I thought would best demonstrate nuances in how to use the `grep` command in my limited understanding of how it works. I also referred back to the instructions from the Week 5 lab to ensure that the syntax I used for the `grep` command was correct. 
+For the second section of the lab report, I used Google first to find the different options I could use with the `grep` command, which led me to the url `https://www.geeksforgeeks.org/grep-command-in-unixlinux/`. I looked at the list of different command options, took note of how they worked per their descriptions, and picked which ones I thought would best demonstrate nuances in how to use the `grep` command in my limited understanding of how it works. I also referred back to the instructions from the Week 5 lab to ensure that the syntax I used for the `grep` command was correct. Other important links that helped me find relevant information were `https://docs.rackspace.com/docs/use-the-linux-grep-command`, 
