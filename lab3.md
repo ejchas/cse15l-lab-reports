@@ -222,7 +222,7 @@ grep -r -h "the" technical/biomed/1471-2156-2-1.txt
         pressure-induced damage [ 6]. 
 ```
 
-The keyword I inputted was `the`, and obviously many, many lines appeared as a result. What I found interesting about this usage of `-h` was that I could almost summarize the entire `.txt` file by just reading through the returned lines. Almost all of the text is cohesive, and will grant the user a general understanding of the context of the text. 
+The keyword I inputted was `the`, and obviously many, many lines appeared as a result. What I found interesting about this usage of `-h` was that I could almost summarize the entire `.txt` file by just reading through the returned lines. Almost all of the text is cohesive, and will grant the user a general understanding of the meaning of the text. 
 
 I found another interesting usage of `-h` by pairing it up with the syntax `technical/{government, biomed}/`. Like the previous instance, no file name will be displayed, but I did get quite a few lines of text when I inputted the keyword `territory`:
 
@@ -286,8 +286,81 @@ Now, I get a list of every single file that will **only** showcase instances of 
 
 #### Option `-v`:
 
-Finally, the `-v` option
+Finally, the `-v` option. Unlike all of the other options up to this point, which will search and return every instance of the pattern I input as a keyword, it will actually do the opposite. It instead returns every single line that does **not** include the keyword I input. In the context of the `technical/` directory which I used `-r` to recursively search through, I picked a file in the `biomed/` subdirectory and tested to see how many lines would **not** contain the keyword `the`. This was the output, shortened:
+
+```
+grep -r -v "the" technical/biomed/rr74.txt
+
+
+
+
+        Introduction
+        circulation in many mammals. NO has been proposed as a
+        circulation, and previous studies using NOS inhibitors [ 1,
+        2] suggested that inhibition of NO increases acute hypoxic
+        pulmonary vasoconstriction. Chronic NOS inhibition did not
+        lead to development of pulmonary hypertension [ 3],
+        however, possibly because of a decrease in cardiac output.
+        These discrepancies have been addressed in recent studies
+        using mice that are deficient in NOS isoforms.
+        vasculature is eNOS [ 4]. iNOS is expressed in airway
+        lung nervous tissue [ 4, 5, 7, 8]. Thus, all three NOS
+        isoforms could contribute to modulation of pulmonary
+        vascular tone. Studies using knockout mice for each of
+        NO is important in modulating basal pulmonary vascular
+        pulmonary hypertension.
+        Severe sustained hypoxia causes pulmonary hypertension
+        in many animals. Upregulation of all three NOS isoforms
+        following severe hypoxia has been reported in rats [ 4, 13,
+        17, 18] suggesting an increase in lung eNOS and iNOS
+        upregulated following hypoxia and that this may account for
+        present study we exposed wild-type mice to severe hypobaric
+        hypoxia from birth and measured NOS mRNA and protein
+        immunohistochemistry.
+
+
+        Materials and methods
+
+          Mice
+          We studied F1-generation SV129 (Taconic, Germantown,
+          NY, USA) and C57BL/6 (Jackson Laboratories, Bar Harbor,
+          ME, USA) mice at age 6 weeks.
+
+```
+
+To my surprise, many lines in this file did not include the word "the". I assumed that since "the" is such a common article word that not many lines would appear. I also noticed that some capitalized versions of "the" were still present in the output. In any case, this usage of the `-v` option will allow for extraction of any information in files that do not have to do with specific topics. 
+
+I think that to effectively extract information from topics **not** pertaining to the inputted keyword, I would need to combine `-v` with other commands, such as `-e` and `-i` to ignore case. I reran the same command, with some modifications:
+
+```
+grep -r -vi -e  "the" -e "cardiac" -e "lung"  technical/biomed/rr74.txt
+
+
+
+
+        Introduction
+        circulation in many mammals. NO has been proposed as a
+        circulation, and previous studies using NOS inhibitors [ 1,
+        2] suggested that inhibition of NO increases acute hypoxic
+        pulmonary vasoconstriction. Chronic NOS inhibition did not
+        lead to development of pulmonary hypertension [ 3],
+        using mice that are deficient in NOS isoforms.
+        vasculature is eNOS [ 4]. iNOS is expressed in airway
+        isoforms could contribute to modulation of pulmonary
+        vascular tone. Studies using knockout mice for each of
+        NO is important in modulating basal pulmonary vascular
+        pulmonary hypertension.
+        Severe sustained hypoxia causes pulmonary hypertension
+        in many animals. Upregulation of all three NOS isoforms
+        following severe hypoxia has been reported in rats [ 4, 13,
+        upregulated following hypoxia and that this may account for
+        present study we exposed wild-type mice to severe hypobaric
+        hypoxia from birth and measured NOS mRNA and protein
+        immunohistochemistry.
+```
+
+Again, shortened output. I noticed that no version of the word "the" appeared in here. Along with that, no instances of the keywords `cardiac` or `lung` were present. Combining these commands all together may induce some more fruitful outputs, in that in order to effectively use the `grep` command, some creativity may be necessary to get the desired output. If you want to skim through texts, using `-h` may help. If you want to extract information outside of the main idea of the text, use `-v`. For more refined searches, use `-w` and `-i`. All of the command line options shown provide resourceful ways of processing information.
 
 ### Citations:
 
-For the second section of the lab report, I used Google first to find the different options I could use with the `grep` command, which led me to the url `https://www.geeksforgeeks.org/grep-command-in-unixlinux/`. I looked at the list of different command options, took note of how they worked per their descriptions, and picked which ones I thought would best demonstrate nuances in how to use the `grep` command in my limited understanding of how it works. I also referred back to the instructions from the Week 5 lab to ensure that the syntax I used for the `grep` command was correct. Other important links that helped me find relevant information were `https://docs.rackspace.com/docs/use-the-linux-grep-command`, `https://docs.rackspace.com/docs/use-the-linux-grep-command`, `https://unix.stackexchange.com/questions/126514/how-can-i-use-grep-to-search-multiple-unnested-directories`
+For the second section of the lab report, I used Google first to find the different options I could use with the `grep` command, which led me to the url `https://www.geeksforgeeks.org/grep-command-in-unixlinux/`. I looked at the list of different command options, took note of how they worked per their descriptions, and picked which ones I thought would best demonstrate nuances in how to use the `grep` command in my limited understanding of how it works. I also referred back to the instructions from the Week 5 lab to ensure that the syntax I used for the `grep` command was correct. Other important links that helped me find relevant information were `https://docs.rackspace.com/docs/use-the-linux-grep-command`, `https://docs.rackspace.com/docs/use-the-linux-grep-command`, `https://unix.stackexchange.com/questions/126514/how-can-i-use-grep-to-search-multiple-unnested-directories`.
