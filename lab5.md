@@ -3,6 +3,7 @@
 Below is a *simulation* of what an EdStem post on a debugging scenario would look like. Firstly, a student publishes a question on EdStem, after of course looking through similar posts and seeing if the question has already been answered. 
 
 1. After confirming that there are apparently **no** related posts, the student posts the following question below:
+<img width="597" alt="Lab Report 5 SC 2" src="https://github.com/ejchas/cse15l-lab-reports/assets/156235662/7363b540-71b8-4ec5-b71f-9b519747a92c">
 
 2. A TA graciously responds to the question that the student posts, by providing the following insight to the student:|
 
