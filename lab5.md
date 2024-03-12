@@ -8,7 +8,7 @@ Below is a *simulation* of what an EdStem post on a debugging scenario would loo
 2. A TA graciously responds to the question that the student posts, by providing the following insight to the student:
 <img width="596" alt="Lab Report 5 SC 3" src="https://github.com/ejchas/cse15l-lab-reports/assets/156235662/b8e33fa1-e67f-456b-804c-988745991404">
 
-3. By following the TA's instructions on how to resolve the bug, the student showcases the following output:
+3. By following the TA's instructions on how to resolve the bug, the student's code showcases the following output:
 
 4. In the end, the student received feedback that helped them with identifying what was the **bug** that causes the **behavior** in their code. They were able to identify the following:
 
